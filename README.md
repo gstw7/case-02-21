@@ -1,57 +1,62 @@
-case-smarkio
-==============================
-
-Desenvolvimento de case para vaga em Ciência de Dados.
-
-Project Organization
+Organização do projeto
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── Makefile           
+    ├── README.md          
     ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── interim        
+    │   ├── raw            
+    │  
+    ├── pdf
+    ├── models            
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── notebooks
+    │    └── dependencies                                
+    │  
+    ├── figures  
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
-
+    ├── requirements.txt 
+    │                         
+    └──
 --------
+## Requisitos
+- Python 3.8
+- Jupyter Notebook
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+## Como rodar?
+
+1. Clonar o repositório para sua máquina;
+2. Dentro da pasta do repositório execute no terminal ou prompt de comando: ```pip install -r requirements.txt```; 
+Obs.: Recomendo estar utilizando um ambiente virtual para a execução do comando acima.
+3. Dentro da pasta do repositório execute no terminal ou prompt de comando: ```jupyter notebook```;
+4. Navegar até a pasta **notebooks** e executar os arquivos com extensão .ipynb na respectiva ordem da numeração.
+---
+### Rodando somente o modelo em uma nova base
+
+Caso queira utilizar o modelo com novos dados.
+Dentro da pasta **models** encontra-se os dois modelos propostos:
+1. Modelo do primeiro exercício: modelo_classificacao.sav
+2. Modelo do segundo exercício: modelo_nlp.sav
+
+Ofereça para o modelo 1. novos dados com as seguintes colunas:
+- Pred_class; **int** 
+- probabilidade. **float**
+
+Obs.: Sem valores nulos.
+
+Exemplo de como executar dentro do jupyter notebook:
+```import pickle```
+```modelo = pickle.load(open('modelo_classificador.sav', 'rb'))```
+```modelo.predict(X[0:1])```
+---
+Ofereça para o modelo 2. novos dados com as seguintes colunas:
+- letra; **object**
+- artista. **object**
+
+Obs.: Sem valores nulos.
+
+Exemplo de como executar dentro do jupyter notebook:
+```import pickle```
+```modelo = pickle.load(open('modelo_nlp.sav', 'rb'))```
+```modelo.predict(X[0:1])```
