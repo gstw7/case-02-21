@@ -46,9 +46,11 @@ Ofereça para o modelo 1. novos dados com as seguintes colunas:
 Obs.: Sem valores nulos.
 
 Exemplo de como executar dentro do jupyter notebook:
-```import pickle```
-```modelo = pickle.load(open('modelo_classificador.sav', 'rb'))```
-```modelo.predict(X[0:1])```
+```py
+import pickle
+modelo = pickle.load(open('modelo_classificador.sav', 'rb'))
+modelo.predict(X[0:1])
+```
 ---
 Ofereça para o modelo 2. novos dados com as seguintes colunas:
 - letra; **object**
@@ -57,6 +59,8 @@ Ofereça para o modelo 2. novos dados com as seguintes colunas:
 Obs.: Sem valores nulos.
 
 Exemplo de como executar dentro do jupyter notebook:
-```import pickle```
-```modelo = pickle.load(open('modelo_nlp.sav', 'rb'))```
-```modelo.predict(X[0:1])```
+```py
+import pickle
+modelo = pickle.load(open('modelo_nlp.sav', 'rb'))
+modelo.predict(X[0:1])
+```
