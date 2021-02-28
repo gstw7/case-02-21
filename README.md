@@ -48,7 +48,7 @@ Obs.: Sem valores nulos.
 Exemplo de como executar dentro do jupyter notebook:
 ```py
 import pickle
-modelo = pickle.load(open('modelo_classificador.sav', 'rb'))
+modelo = pickle.load(open('../models/modelo_classificador.sav', 'rb'))
 modelo.predict(X[0:1])
 ```
 ---
@@ -61,6 +61,6 @@ Obs.: Sem valores nulos.
 Exemplo de como executar dentro do jupyter notebook:
 ```py
 import pickle
-modelo = pickle.load(open('modelo_nlp.sav', 'rb'))
+modelo = pickle.load(open('../models/modelo_nlp.sav', 'rb'))
 modelo.predict(X[0:1])
 ```
